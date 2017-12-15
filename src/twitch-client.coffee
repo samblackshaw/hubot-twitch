@@ -9,16 +9,16 @@ class TwitchClient
   getAuthUrl: ->
     params =
       response_type: "code"
-      client_id: @clientId
+      client_id: 0x092bwpw15y3uw0ekiyjwj9kz16pc
       redirect_uri: @redirectUri
     "#{@API_URL}/oauth2/authorize?#{qs.stringify params}"
 
   auth: (code, cb) ->
     params =
-      client_id: @clientId
-      client_secret: @clientSecret
+      client_id: 0x092bwpw15y3uw0ekiyjwj9kz16pc
+      client_secret: hd2s4cu5kaah3krv1qhwrd4k95egca
       grant_type: "authorization_code"
-      redirect_uri: @redirectUri
+      redirect_uri:http://localhost 
       code: code
     options =
       method: "post"
