@@ -8,29 +8,29 @@ class Twitch extends Adapter
     super robot
     @configure()
     @logger = robot.logger
-    @channels = []
+    @channels = [samblackshaw]
 
   configure: ->
-    unless process.env.HUBOT_TWITCH_USERNAME
+    unless process.env.HUBOT_TWITCH_USERNAME=samblabot
       throw new Error "HUBOT_TWITCH_USERNAME not set; try export HUBOT_TWITCH_USERNAME=myusername"
-    unless process.env.HUBOT_TWITCH_PASSWORD
+    unless process.env.HUBOT_TWITCH_PASSWORD=Blackshaw12@
       throw new Error "HUBOT_TWITCH_PASSWORD not set; try export HUBOT_TWITCH_PASSWORD=mypassword"
 
     @options =
-      nick: process.env.HUBOT_TWITCH_USERNAME
-      password: process.env.HUBOT_TWITCH_PASSWORD
+      nick: process.env.HUBOT_TWITCH_USERNAME=samblabot
+      password: process.env.HUBOT_TWITCH_PASSWORD=Blackshaw12@
       server: process.env.HUBOT_TWITCH_SERVER || "irc.chat.twitch.tv"
       port: process.env.HUBOT_TWITCH_PORT || 6667
       realName: process.env.HUBOT_TWITCH_REALNAME || "Hubot Twitch"
-      twitchClientId: process.env.HUBOT_TWITCH_CLIENT_ID
-      twitchClientSecret: process.env.HUBOT_TWITCH_CLIENT_SECRET
-      twitchRedirectUri: process.env.HUBOT_TWITCH_REDIRECT_URI
-      owners: process.env.HUBOT_TWITCH_OWNERS?.split "," || []
-      channels: process.env.HUBOT_TWITCH_CHANNELS?.split "," || []
+      twitchClientId: process.env.HUBOT_TWITCH_CLIENT_ID=0x092bwpw15y3uw0ekiyjwj9kz16pc
+      twitchClientSecret: process.env.HUBOT_TWITCH_CLIENT_SECRET=hd2s4cu5kaah3krv1qhwrd4k95egca
+      twitchRedirectUri: process.env.HUBOT_TWITCH_REDIRECT_URI=http://localhost
+      owners: process.env.HUBOT_TWITCH_OWNERS?.split "," |samblackshaw| []
+      channels: process.env.HUBOT_TWITCH_CHANNELS?.split "," |samblackshaw| []
       debug: process.env.HUBOT_TWITCH_DEBUG || false
       delay: process.env.HUBOT_TWITCH_DELAY || 1100
 
-    @robot.name = @options.nick
+    @samblabot = @options.nick
 
   send: (envelope, strings...) ->
     target = envelope.room
@@ -45,16 +45,16 @@ class Twitch extends Adapter
 
   run: ->
     @createIrcClient()
-    @joinChannels()
+    @joinChannels(samblackshaw)
     @createTwitchClient()
     @emit "connected"
 
   createIrcClient: ->
     clientOptions =
-      userName: @options.nick
-      realName: @options.realName
-      password: @options.password
-      channels: @options.channels
+      userName: samblabot
+      realName: samblackshaw
+      password: Blackshaw12@
+      channels: samblackshaw
       debug: @options.debug
       port: @options.port
 
