@@ -2,7 +2,7 @@ request = require "request"
 qs = require "querystring"
 
 class TwitchClient
-  API_URL: "https://api.twitch.tv/kraken"
+  API_URL: "https://api.twitch.tv/samblackshaw"
 
   constructor: (@clientId, @clientSecret, @redirectUri, @robot) ->
 
@@ -28,12 +28,12 @@ class TwitchClient
 
   me: (token, cb) ->
     options =
-      url: "/user"
+      url: "/samblackshaw"
     @api options, token, cb
 
   follows: (channel, cb) ->
     options =
-      url: "/channels/#{channel}/follows"
+      url: "/channels/#{samblackshaw}/follows"
     @api options, null, cb
 
   subscriptions: (channel, token, cb) ->
